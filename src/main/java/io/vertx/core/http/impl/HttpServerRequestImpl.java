@@ -293,6 +293,13 @@ public class HttpServerRequestImpl implements HttpServerRequest {
   }
 
   @Override
+  public void clearParams() {
+    if (params != null) {
+      params.clear();
+    }
+  }
+
+  @Override
   public String getParam(String paramName) {
     return params().get(paramName);
   }

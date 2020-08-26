@@ -152,6 +152,11 @@ public interface HttpServerRequest extends ReadStream<Buffer> {
   MultiMap params();
 
   /**
+   * Clears the query parameters
+   */
+  void clearParams();
+
+  /**
    * Return the first param value with the specified name
    *
    * @param paramName  the param name
@@ -344,7 +349,7 @@ public interface HttpServerRequest extends ReadStream<Buffer> {
    * Set an handler for stream priority changes
    * <p>
    * This is not implemented for HTTP/1.x.
-   * 
+   *
    * @param handler the handler to be called when stream priority changes
    */
   @Fluent

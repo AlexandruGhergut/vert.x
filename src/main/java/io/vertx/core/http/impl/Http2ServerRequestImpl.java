@@ -346,6 +346,15 @@ public class Http2ServerRequestImpl extends Http2ServerStream implements HttpSer
   }
 
   @Override
+  public void clearParams() {
+    synchronized (conn) {
+      if (params != null) {
+        params.clear();
+      }
+    }
+  }
+
+  @Override
   public String getParam(String paramName) {
     return params().get(paramName);
   }
